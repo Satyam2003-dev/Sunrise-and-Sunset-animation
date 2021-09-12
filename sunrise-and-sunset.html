@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        content: "";
+        position: relative;
+        overflow: hidden;
+        /*background: linear-gradient(45deg, rgba(22, 22, 190, 0.4), rgba(100,100,190, 0.4)), linear-gradient(100deg, rgba(100,100,220,0.4), rgba(140,140,255,0.4));
+	      background: linear-gradient(90deg, #24CAFF, #608CEE);*/
+        animation: daynight 20s linear infinite;
+      }
+      @keyframes daynight {
+        0%,
+        100% {
+          background-color: #1a1a1a;
+        }
+        50% {
+          background-color: #24bbff;
+        }
+      }
+      #ground {
+        content: "";
+        width: 100vw;
+        height: 44vh;
+        background: #73c631;
+        position: absolute;
+        top: 56vh;
+        z-index: 4;
+        animation: ground 20s linear infinite;
+      }
+      @keyframes ground {
+        0%,
+        100% {
+          background-color: green;
+        }
+        50% {
+          background-color: #73c631;
+        }
+      }
+      #sun {
+        content: "";
+        height: 170px;
+        width: 170px;
+        position: absolute;
+        z-index: 2;
+        background: radial-gradient(
+          #ff5b35 20%,
+          #ff714d 55%,
+          rgba(225, 190, 0)
+        );
+        border-radius: 50%;
+        box-shadow: 2px 2px 700px 190px rgba(225, 190, 0);
+        top: 70vh;
+        left: 17vh;
+        transform-origin: 38vw;
+        animation: rota 20s linear infinite;
+      }
+      @keyframes rota {
+        0% {
+          transform: rotate(-40deg);
+        }
+        96% {
+          transform: rotate(220deg);
+        }
+        100% {
+          transform: rotate(320deg);
+        }
+      }
+      #cloud,
+      #cloud2 {
+        content: "";
+        height: 38px;
+        width: 114px;
+        background-color: #efefef;
+        border-radius: 44px/20px;
+        position: absolute;
+        top: 140px;
+        z-index: 5;
+        transform: scale(1.7);
+        animation: tran 100s infinite;
+      }
+      #cloud2 {
+        animation: tran 55s infinite;
+        top: 170px;
+        transform: scale(0.8);
+      }
+      @keyframes tran {
+        from {
+          left: -10vw;
+        }
+        to {
+          left: 110vw;
+        }
+      }
+      #cloud::after,
+      #cloud2::after {
+        height: 38px;
+        width: 44px;
+        content: "";
+        position: absolute;
+        background-color: #efefef;
+        border-radius: 50%;
+        top: -11px;
+        left: 9px;
+        box-shadow: 25px -10px #efefef, 50px 0 #efefef;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sunrise and sunset</title>
+  </head>
+  <body>
+    <div id="sun"></div>
+    <div id="ground"></div>
+    <div id="cloud"></div>
+    <div id="cloud2"></div>
+  </body>
+</html>
